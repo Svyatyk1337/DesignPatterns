@@ -1,5 +1,3 @@
-# creational_patterns/main.py
-
 from creational_design_patterns.singleton import AppSettings
 from creational_design_patterns.builder import ComputerAssembler, GamingComputerBuilder, OfficeComputerBuilder
 from creational_design_patterns.abstract_factory import create_ui, WindowsGUIFactory, MacOSGUIFactory
