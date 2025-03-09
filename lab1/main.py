@@ -5,6 +5,7 @@ from creational_design_patterns.builder import ComputerAssembler, GamingComputer
 from creational_design_patterns.abstract_factory import create_ui, WindowsGUIFactory, MacOSGUIFactory
 from creational_design_patterns.prototype import Document
 from creational_design_patterns.singleton import AppSettings
+from creational_design_patterns.factory_method import CarFactory, BikeFactory, client_code 
 import copy
 from threading import Thread
 
@@ -86,9 +87,19 @@ def test_thread_safe_singleton():
     final_settings = AppSettings()
     print(f"Final settings: Database URL: {final_settings.get_database_url()}, Log Level: {final_settings.get_log_level()}")
 
+def test_factory_method():
+    """Demonstrates the Factory Method pattern."""
+    print("\n--- Testing Factory Method (Transport) ---")
+    print("App: Launched with the CarFactory.")
+    client_code(CarFactory())
+    print("\n")
+
+    print("App: Launched with the BikeFactory.")
+    client_code(BikeFactory())
+    print("\n")
 if __name__ == "__main__":
     test_singleton()
     test_builder()
     test_abstract_factory()
     test_prototype()
-    test_thread_safe_singleton()
+    test_factory_method()
