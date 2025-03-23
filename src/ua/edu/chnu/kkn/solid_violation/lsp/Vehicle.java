@@ -1,8 +1,6 @@
 package ua.edu.chnu.kkn.solid_violation.lsp;
 
 public abstract class Vehicle {
-
-
     private boolean engineStarted = false;
 
     public void startEngine() {
@@ -17,9 +15,5 @@ public abstract class Vehicle {
         this.engineStarted = false;
     }
 
-    public abstract void fillUpWithFuel();
-
-    public abstract void chargeBattery();
-
-
+    public abstract void fillUp(); // Узагальнений метод для заправки
 }

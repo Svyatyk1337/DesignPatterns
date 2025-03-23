@@ -1,20 +1,20 @@
 package ua.edu.chnu.kkn.solid_violation.lsp;
 
 public class PetrolCar extends Vehicle {
-  private static final int FUEL_TANK_FULL = 100;
-  private int fuelTankLevel = 0;
 
-  @Override
-  public void fillUpWithFuel() {
-    this.fuelTankLevel = FUEL_TANK_FULL;
-  }
+    private static final int FUEL_TANK_FULL = 100;
+    private int fuelTankLevel = 0;
 
-  @Override
-  public void chargeBattery() {
-    throw new UnsupportedOperationException("A petrol car cannot be recharged");
-  }
+    @Override
+    public void fillUp() {
+        fillUpWithFuel();
+    }
 
-  public int fuelTankLevel() {
-    return fuelTankLevel;
-  }
+    private void fillUpWithFuel() {
+        this.fuelTankLevel = FUEL_TANK_FULL;
+    }
+
+    public int fuelTankLevel() {
+        return fuelTankLevel;
+    }
 }
