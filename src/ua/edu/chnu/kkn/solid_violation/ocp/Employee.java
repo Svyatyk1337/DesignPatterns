@@ -1,26 +1,36 @@
 package ua.edu.chnu.kkn.solid_violation.ocp;
 
-public class Employee {
+abstract class Employee {
+    protected int salary;
 
-    private int salary;
-    private int bonus;
-    private EmployeeType type;
-
-    Employee(int salary, int bonus, EmployeeType type) {
+    Employee(int salary) {
         this.salary = salary;
-        this.bonus = bonus;
-        this.type = type;
     }
 
+    public abstract int payAmount();
+}
+
+class Engineer extends Employee {
+    Engineer(int salary) {
+        super(salary);
+    }
+
+    @Override
     public int payAmount() {
-        switch (this.type) {
-            case ENGINEER:
-                return salary;
-            case MANAGER:
-                return salary + bonus;
-            default:
-                return 0;
-        }
+        return salary;
+    }
+}
+
+class Manager extends Employee {
+    private int bonus;
+
+    Manager(int salary, int bonus) {
+        super(salary);
+        this.bonus = bonus;
     }
 
+    @Override
+    public int payAmount() {
+        return salary + bonus;
+    }
 }
