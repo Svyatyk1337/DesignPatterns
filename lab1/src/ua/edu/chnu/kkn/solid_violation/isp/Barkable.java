@@ -1,7 +1,5 @@
 package ua.edu.chnu.kkn.solid_violation.isp;
 
-public interface Animal {
-    void fly();
-    void run();
+public interface Barkable {
     void bark();
 }
