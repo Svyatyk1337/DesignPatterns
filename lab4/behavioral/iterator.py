@@ -1,4 +1,4 @@
-class Iterator:
+class MyIterator:
     def __init__(self, collection):
         self.collection = collection
         self.index = 0

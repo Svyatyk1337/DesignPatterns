@@ -1,13 +1,13 @@
-from typing import Iterator
-from lab4.behavioral.chain_of_responsibility import ConcreteHandler1, ConcreteHandler2
-from lab4.behavioral.command import ConcreteCommand, Receiver
-from lab4.behavioral.mediator import Component1, Component2, ConcreteMediator
-from lab4.behavioral.memento import Originator
-from lab4.behavioral.observer import ConcreteObserver, Subject
-from lab4.behavioral.state import ConcreteStateA, Context
-from lab4.behavioral.strategy import ConcreteStrategyA, ContextStrategy
-from lab4.behavioral.template_method import ConcreteClass
-from lab4.behavioral.visitor import ConcreteElement, ConcreteVisitor
+from behavioral.iterator  import MyIterator
+from behavioral.command import ConcreteCommand, Receiver
+from behavioral.mediator import Component1, Component2, ConcreteMediator
+from behavioral.memento import Originator
+from behavioral.chain_of_responsibility import ConcreteHandler1, ConcreteHandler2
+from behavioral.observer import ConcreteObserver, Subject
+from behavioral.state import ConcreteStateA, Context
+from behavioral.strategy import ConcreteStrategyA, ContextStrategy
+from behavioral.template_method import ConcreteClass
+from behavioral.visitor import ConcreteElement, ConcreteVisitor
 
 
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     command.execute()
 
     # Iterator
-    iterator = Iterator([1, 2, 3])
+    iterator = MyIterator([1, 2, 3])
     for item in iterator:
         print(item)
 
