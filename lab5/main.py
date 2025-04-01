@@ -1,5 +1,3 @@
-# Tasks using lambda expressions and functional programming features in Python
-
 # 1. Filter odd numbers from a list of integers using lambda expression
 def filter_odd_numbers(numbers):
     """Filter odd numbers from a list."""
@@ -89,7 +87,6 @@ def count_words(sentence):
     if not sentence:
         return 0
     
-    # Split by spaces and filter out empty strings
     words = list(filter(lambda x: x != '', sentence.split(' ')))
     word_count = len(words)
     
@@ -124,7 +121,6 @@ def find_second_largest(numbers):
     if len(numbers) < 2:
         return None
     
-    # Sort in descending order and take the second element
     sorted_nums = sorted(numbers, reverse=True)
     second_largest = sorted_nums[1]
     
@@ -150,7 +146,6 @@ def find_largest_even(numbers):
     
     return largest_even
 
-# Main execution with example data
 if __name__ == "__main__":
     print("\n1. Filter odd numbers:")
     filter_odd_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
