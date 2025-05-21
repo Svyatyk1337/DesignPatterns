@@ -4,5 +4,11 @@
     "position": "mid",
     "rating": 90,
     "price": 10.0
+  },
+  {
+    "name": "sv",
+    "position": "mid",
+    "rating": 90,
+    "price": 10.0
   }
 ]

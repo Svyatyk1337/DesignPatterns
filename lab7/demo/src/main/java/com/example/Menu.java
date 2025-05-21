@@ -6,11 +6,14 @@ import com.example.services.PlayerService;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.inject.Inject;
+
 public class Menu {
     
     private final Scanner scanner;
     private final PlayerService playerService;
     
+    @Inject
     public Menu(Scanner scanner, PlayerService playerService) {
         this.scanner = scanner;
         this.playerService = playerService;

@@ -57,11 +57,9 @@ public final class DaggerAppComponent {
 
     private Provider<Scanner> provideScannerProvider;
 
+    private Provider<String> provideFilePathProvider;
+
     private Provider<Gson> provideGsonProvider;
-
-    private Provider<PlayerService> providePlayerServiceProvider;
-
-    private Provider<Menu> provideMenuProvider;
 
     private AppComponentImpl(AppModule appModuleParam) {
 
@@ -69,17 +67,20 @@ public final class DaggerAppComponent {
 
     }
 
+    private PlayerService playerService() {
+      return new PlayerService(provideFilePathProvider.get(), provideGsonProvider.get());
+    }
+
     @SuppressWarnings("unchecked")
     private void initialize(final AppModule appModuleParam) {
       this.provideScannerProvider = DoubleCheck.provider(AppModule_ProvideScannerFactory.create(appModuleParam));
+      this.provideFilePathProvider = DoubleCheck.provider(AppModule_ProvideFilePathFactory.create(appModuleParam));
       this.provideGsonProvider = DoubleCheck.provider(AppModule_ProvideGsonFactory.create(appModuleParam));
-      this.providePlayerServiceProvider = DoubleCheck.provider(AppModule_ProvidePlayerServiceFactory.create(appModuleParam, provideGsonProvider));
-      this.provideMenuProvider = DoubleCheck.provider(AppModule_ProvideMenuFactory.create(appModuleParam, provideScannerProvider, providePlayerServiceProvider));
     }
 
     @Override
     public Menu getMenu() {
-      return provideMenuProvider.get();
+      return new Menu(provideScannerProvider.get(), playerService());
     }
   }
 }

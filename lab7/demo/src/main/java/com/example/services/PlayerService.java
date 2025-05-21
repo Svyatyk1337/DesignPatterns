@@ -9,12 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 public class PlayerService {
     private final String filePath;
     private final Gson gson;
     private List<Player> players;
 
-    public PlayerService(String filePath, Gson gson) {
+    @Inject
+    public PlayerService(@Named("filePath") String filePath, Gson gson) {
         this.filePath = filePath;
         this.gson = gson;
         this.players = loadPlayers();
